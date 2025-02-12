@@ -5,13 +5,6 @@ export default function Home() {
   const isLoggedIn = true;
   const name = "Snail";
 
-  const pricingFeaturesList = [
-    "Collect customer feedback",
-    "Unlimited boards",
-    "Admin dashboard",
-    "24/7 support",
-  ];
-
   return (
     <main>
       {/* Header */}
@@ -56,25 +49,28 @@ export default function Home() {
             </div>
 
             <ul className="space-y-2">
-              {pricingFeaturesList.map((priceItem) => {
-                return (
-                  <li className="flex gap-2 items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="size-5 text-green-600"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    {priceItem}
-                  </li>
-                );
-              })}
+              {[
+                "Collect customer feedback",
+                "Unlimited boards",
+                "Admin dashboard",
+                "24/7 support",
+              ].map((priceItem) => (
+                <li className="flex gap-2 items-center" key={priceItem}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="size-5 text-green-600"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {priceItem}
+                </li>
+              ))}
             </ul>
 
             <ButtonLogin
