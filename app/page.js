@@ -1,5 +1,7 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import productDemo from "@/public/productDemo.jpeg";
 
 export default function Home() {
   // let the user name be Snail and he is not logged in
@@ -10,7 +12,7 @@ export default function Home() {
     <main>
       {/* Header */}
       <section className="bg-base-200">
-        <section className="flex justify-between items-center px-8 py-2 max-w-3xl mx-auto">
+        <section className="flex justify-between items-center px-8 py-2 max-w-5xl mx-auto">
           <div className="font-bold">CodeFastSaaS</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-hover" href="#pricing">
@@ -25,15 +27,22 @@ export default function Home() {
       </section>
 
       {/* Hero */}
-      <section className="text-center py-32 px-8 max-w-3xl mx-auto">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-          Collect customer feedback to build better products
-        </h1>
-        <div className="opacity-90 mb-10">
-          Create a feedback board in minutes, priotize features, and build
-          products your customers will love.
+      <section className="text-center lg:text-left py-32 px-8 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+        <Image
+          src={productDemo}
+          alt="Product Demo"
+          className="w-96 rounded-xl"
+        />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            Collect customer feedback to build better products
+          </h1>
+          <div className="opacity-90 mb-10">
+            Create a feedback board in minutes, priotize features, and build
+            products your customers will love.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
 
       {/* Pricing */}
@@ -88,8 +97,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Frequently Asked Questions */}
-      <section className="bg-base-200" id="faq">
+      {/* Frequently Asked Questions className="bg-base-200"*/}
+      <section id="faq">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             FAQ
