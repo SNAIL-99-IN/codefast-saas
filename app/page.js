@@ -1,4 +1,5 @@
 import ButtonLogin from "@/components/ButtonLogin";
+import FAQListItem from "@/components/FAQListItem";
 
 export default function Home() {
   // let the user name be Snail and he is not logged in
@@ -40,6 +41,7 @@ export default function Home() {
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-12 text-center">
             A pricing that adapt to your needs
           </h2>
+
           <div className="p-8 bg-base-100 max-w-96 rounded-3xl mx-auto space-y-6">
             <div className="flex gap-2 items-baseline">
               <div className="text-4xl font-black">$19</div>
@@ -79,6 +81,34 @@ export default function Home() {
               extraStyle="w-full"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="bg-base-200">
+        <div className="py-32 px-8 max-w-3xl max-auto">
+          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+            FAQ
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+
+          <ul className="max-w-lg mx-auto">
+            {[
+              {
+                question: "What do I get exactly?",
+                answer: "Scammed LoL KEKW",
+              },
+              { question: "Can I get a refund?", answer: "Nooo LoL" },
+              {
+                question: "I have another question",
+                answer: "Later Aligator...",
+              },
+            ].map((qa) => (
+              <FAQListItem key={qa.question} qa={qa} />
+            ))}
+          </ul>
         </div>
       </section>
     </main>
