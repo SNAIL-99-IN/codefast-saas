@@ -2,6 +2,7 @@ import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/public/productDemo.jpeg";
+import clientPromise from "@/libs/mongo";
 
 export default function Home() {
   // let the user name be Snail and he is not logged in
